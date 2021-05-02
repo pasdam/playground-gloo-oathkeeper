@@ -1,0 +1,24 @@
+gateway:
+  validation:
+    alwaysAcceptResources: false
+    allowWarnings: false
+
+gatewayProxies:
+  gatewayProxy:
+    gatewaySettings:
+      disableHttpsGateway: true
+
+gloo:
+  deployment:
+    disableUsageStatistics: true
+
+settings:
+  create: true
+  disableKubernetesDestinations: true
+  invalidConfigPolicy:
+    replaceInvalidRoutes: true
+    invalidRouteResponseCode: 502
+  writeNamespace: gloo-system
+  watchNamespaces:
+  - default
+  - gloo-system
