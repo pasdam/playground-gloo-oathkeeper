@@ -1,3 +1,16 @@
+global:
+  extensions:
+    extAuth:
+      extauthzServerRef:
+        name: oathkeeper-oathkeeper-api-4456
+        namespace: gloo-system
+      requestTimeout: 0.5s
+      httpService:
+        pathPrefix: /decisions
+        response:
+          allowedUpstreamHeaders:
+            - x-user-id
+
 gateway:
   validation:
     alwaysAcceptResources: false
@@ -22,3 +35,4 @@ settings:
   watchNamespaces:
   - default
   - gloo-system
+  - oathkeeper

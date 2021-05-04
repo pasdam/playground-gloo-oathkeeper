@@ -1,0 +1,15 @@
+- id: allow-anonymous-with-header-mutator
+  version: v0.36.0-beta.4
+  match:
+    url: http://<127.0.0.1|localhost>:8080/anything/header
+    methods:
+      - GET
+  authenticators:
+    - handler: jwt
+  authorizer:
+    handler: allow
+  mutators:
+    - handler: header
+      config:
+        headers:
+          X-User-Id: "{{ print .Subject }}"

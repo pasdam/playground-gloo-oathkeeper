@@ -1,0 +1,39 @@
+service:
+  proxy:
+    enabled: false
+
+maester:
+  enabled: false
+
+deployment:
+  extraEnv:
+    - name: SQA_OPT_OUT
+      value: "true"
+
+oathkeeper:
+  config:
+    serve:
+      api:
+        port: 4456
+    log:
+      format: json
+      level: debug
+    mutators:
+      header:
+        enabled: true
+        config:
+          headers:
+            X-User-Id: "{{ print .Subject }}"
+    authenticators:
+      jwt:
+        enabled: true
+        config:
+          allowed_algorithms:
+            - HS256
+          jwks_urls:
+            - file:///etc/secrets/mutator.id_token.jwks.json
+    authorizers:
+      allow:
+        enabled: true
+      deny:
+        enabled: true
