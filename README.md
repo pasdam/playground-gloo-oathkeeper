@@ -25,7 +25,8 @@ This will:
 Once this is done you can generate a JWT using the online editor from
 [jwt.io](https://jwt.io/), just make sure the algorithm is *HS256* (the same as
 the one configured in [values.yaml](./oathkeeper/values.yaml)) and the key is
-the one in [jwks.json](./oathkeeper/jwks.json) in the field `k`.
+the one in [jwks.json](./oathkeeper/jwks.json) in the field `k` (note that it's
+base64 encoded, so select the right option in the online editor).
 
 Then you can perform a request with:
 
