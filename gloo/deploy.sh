@@ -3,7 +3,7 @@
 SCRIPT_DIR="$(cd "$( dirname "$0" )" >/dev/null && pwd )"
 
 helm repo add gloo https://storage.googleapis.com/solo-public-helm
-helm repo update
+helm repo update gloo
 
 helm upgrade --install gloo gloo/gloo \
   --version "1.10.8" \

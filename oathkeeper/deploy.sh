@@ -9,7 +9,7 @@ if [ ! -f "$JWKS_PATH" ]; then
 fi
 
 helm repo add ory https://k8s.ory.sh/helm/charts
-helm repo update
+helm repo update ory
 
 helm upgrade --install oathkeeper ory/oathkeeper \
   --create-namespace \
