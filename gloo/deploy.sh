@@ -6,7 +6,7 @@ helm repo add gloo https://storage.googleapis.com/solo-public-helm
 helm repo update
 
 helm upgrade --install gloo gloo/gloo \
-  --version "1.7.1" \
+  --version "1.10.8" \
   --create-namespace \
   --namespace gloo-system \
   --values $SCRIPT_DIR/values.yaml \
