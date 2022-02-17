@@ -12,6 +12,7 @@ helm repo add ory https://k8s.ory.sh/helm/charts
 helm repo update ory
 
 helm upgrade --install oathkeeper ory/oathkeeper \
+  --version 0.21.8 \
   --create-namespace \
   --namespace oathkeeper \
   --values $SCRIPT_DIR/values.yaml \
