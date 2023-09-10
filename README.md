@@ -1,6 +1,6 @@
-# playground-gloo-outhkeeper
+# playground-gloo-oathkeeper
 
-K8s playground to test Gloo Edge and Ory Oauthkeeper integration.
+K8s playground to test Gloo Edge and Ory Oathkeeper integration.
 
 ## Requirements
 
